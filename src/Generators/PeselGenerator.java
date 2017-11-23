@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Random;
 
 public class PeselGenerator {
-    private Random rnd = new Random();
+    private final Random rnd = new Random();
 
     public String generate() {
         StringBuilder firstTen = new StringBuilder(getRandomDate()).append(getRandomSeries());
@@ -52,15 +52,15 @@ public class PeselGenerator {
 
     public String getControlDigit(StringBuilder string) {
         int control = Character.getNumericValue(string.charAt(0)) * 9 +
-                Character.getNumericValue(string.charAt(0)) * 7 +
-                Character.getNumericValue(string.charAt(0)) * 3 +
-                Character.getNumericValue(string.charAt(0)) +
-                Character.getNumericValue(string.charAt(0)) * 9 +
-                Character.getNumericValue(string.charAt(0)) * 7 +
-                Character.getNumericValue(string.charAt(0)) * 3 +
-                Character.getNumericValue(string.charAt(0)) +
-                Character.getNumericValue(string.charAt(0)) * 9 +
-                Character.getNumericValue(string.charAt(0)) * 7;
+                Character.getNumericValue(string.charAt(1)) * 7 +
+                Character.getNumericValue(string.charAt(2)) * 3 +
+                Character.getNumericValue(string.charAt(3)) +
+                Character.getNumericValue(string.charAt(4)) * 9 +
+                Character.getNumericValue(string.charAt(5)) * 7 +
+                Character.getNumericValue(string.charAt(6)) * 3 +
+                Character.getNumericValue(string.charAt(7)) +
+                Character.getNumericValue(string.charAt(8)) * 9 +
+                Character.getNumericValue(string.charAt(9)) * 7;
         return Integer.toString(control % 10);
     }
 

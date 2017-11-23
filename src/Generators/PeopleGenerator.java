@@ -9,7 +9,6 @@ import Storing.PeopleDatabase;
 import java.text.Collator;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class PeopleGenerator {
@@ -17,7 +16,6 @@ public class PeopleGenerator {
     private PeselGenerator peselGenerator = new PeselGenerator();
     private ArrayList<String> peselsUsed = new ArrayList<>();
     private ArrayList<Integer> studentNumberUsed = new ArrayList<>();
-    Collator collator = Collator.getInstance(Nationality.Polish.getLocale());
 
     public PeopleDatabase<Student> generateStudents(int numberOfStudents) {
         PeopleDatabase<Student> students = new PeopleDatabase<>();

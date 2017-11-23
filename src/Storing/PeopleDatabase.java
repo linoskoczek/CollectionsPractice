@@ -7,7 +7,7 @@ import java.text.Collator;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class PeopleDatabase<TType extends Person> extends TreeSet<TType> {
+public class PeopleDatabase<TType extends Person> extends HashSet<TType> {
     boolean isCached = false;
     List<TType> sortedPolishList;
 
@@ -26,7 +26,6 @@ public class PeopleDatabase<TType extends Person> extends TreeSet<TType> {
                 .filter(e -> e.getNationality() == nationality)
                 .collect(Collectors.toList());
 
-        Collator collator2 = Collator.getInstance(nationality.getLocale());
         return sorted(people, nationality);
     }
     
